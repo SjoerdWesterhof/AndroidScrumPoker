@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_main"
+    android:id="@+id/content_play_poker"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,22 +10,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.billythebastard.scrumpoker.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="com.billythebastard.scrumpoker.PlayPoker"
+    tools:showIn="@layout/activity_play_poker">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello Scrum Poker players!"
-        android:id="@+id/textView" />
-
-    <Button
-        android:text="Button"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_marginEnd="31dp"
-        android:layout_marginTop="47dp"
-        android:id="@+id/main_startPokerButton" />
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="146dp"
+        android:id="@+id/possibleScoresListView" />
 </RelativeLayout>
