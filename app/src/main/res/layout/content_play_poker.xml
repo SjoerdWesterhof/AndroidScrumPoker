@@ -13,6 +13,16 @@
     tools:context="com.billythebastard.scrumpoker.PlayPoker"
     tools:showIn="@layout/activity_play_poker">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/textViewScore"
+        android:textSize="30sp" />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,4 +30,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="146dp"
         android:id="@+id/possibleScoresListView" />
+
 </RelativeLayout>
