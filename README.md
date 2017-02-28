@@ -1,2 +1,4 @@
 # AndroidScrumPoker
-Scrum Poker for Andriod using Adroid Studio
+Scrum Poker for Android using Android Studio
+
+## This app requires the PokerServer running on .net Core
