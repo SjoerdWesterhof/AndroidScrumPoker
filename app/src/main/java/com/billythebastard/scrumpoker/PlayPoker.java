@@ -10,24 +10,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.billythebastard.scrumpoker.pokercards.PokerCard;
+import com.billythebastard.scrumpoker.pokercards.PokerCardList;
+import com.billythebastard.scrumpoker.pokercards.recyclerlistview.PokerCardRecyclerAdapter;
+import com.billythebastard.scrumpoker.pokercards.recyclerlistview.RecyclerItemClickListener;
+
 public class PlayPoker extends AppCompatActivity {
 
-    private PokerCard[] mPokerCards =
-            {
-                    new PokerCard("0", R.drawable.pokercard_0),
-                    new PokerCard("0.5", R.drawable.pokercard_half),
-                    new PokerCard("1", R.drawable.pokercard_1),
-                    new PokerCard("2", R.drawable.pokercard_2),
-                    new PokerCard("3", R.drawable.pokercard_3),
-                    new PokerCard("5", R.drawable.pokercard_5),
-                    new PokerCard("8", R.drawable.pokercard_8),
-                    new PokerCard("13", R.drawable.pokercard_13),
-                    new PokerCard("20", R.drawable.pokercard_20),
-                    new PokerCard("40", R.drawable.pokercard_40),
-                    new PokerCard("100", R.drawable.pokercard_100),
-                    new PokerCard("?", R.drawable.pokercard_questionmark),
-                    new PokerCard("coffee", R.drawable.pokercard_coffee)
-            };
+    private PokerCardList _pokerCards = new PokerCardList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,18 +46,18 @@ public class PlayPoker extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
-        PokerCardRecyclerAdapter adapter = new PokerCardRecyclerAdapter(mPokerCards);
+        PokerCardRecyclerAdapter adapter = new PokerCardRecyclerAdapter(_pokerCards.getPokerCards());
         recyclerView.setAdapter(adapter);
 
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
-                        PokerCard pokerCard = mPokerCards[position];
+                        PokerCard pokerCard = _pokerCards.getPokerCard(position);
                         UpdateScore(pokerCard);
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
-                        PokerCard pokerCard = mPokerCards[position];
+                        PokerCard pokerCard = _pokerCards.getPokerCard(position);
                         UpdateScore(pokerCard);
                     }
                 })
