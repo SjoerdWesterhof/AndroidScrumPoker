@@ -11,24 +11,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.billythebastard.scrumpoker.PlayPoker"
-    tools:showIn="@layout/activity_play_poker">
+    tools:showIn="@layout/activity_play_poker"
+    android:orientation="horizontal">
 
-
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:id="@+id/textViewScore"
-        android:textSize="30sp" />
+        android:id="@+id/imageViewScore"
+        android:textSize="30sp"
+        />
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/pokercards_recyclerView"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        />
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:layout_marginTop="146dp"
-        android:id="@+id/possibleScoresListView" />
+        android:visibility="gone">
+        <ListView
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/possibleScoresListView"
+            android:scrollbars="horizontal"
+            android:layout_width="match_parent" />
+    </HorizontalScrollView>
 
 </RelativeLayout>
